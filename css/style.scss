@@ -1,0 +1,466 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&&display=swap");
+
+ 
+$font-size-136-18: clamp(1.13rem, calc(-0.98rem + 12.23vw), 8.50rem);
+$font-size-57-16: clamp(1.88rem, calc(1.14rem + 3.12vw), 3.56rem);
+$font-size-30-16: clamp(1rem, calc(0.62rem + 1.62vw), 1.88rem);
+$font-size-50-16: clamp(1.00rem, calc(0.39rem + 3.52vw), 3.13rem);
+
+$font-size-16: 1rem;
+$font-size-16-14: clamp(0.88rem, calc(0.82rem + 0.23vw), 1rem);
+$font-size-13: 0.813rem;
+$font-size-14: 0.875rem;
+
+
+
+body {
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    font-size: $font-size-16;
+    font-weight: 400;
+    line-height: 30px;
+    color: var(--dark-500);
+    background-color: var(--light);
+}
+
+:root {
+    --light: #fff;
+    --blue-50: #e4f3ff;
+    --blue-100: #f9faff;
+    --blue-150: #dcefff;
+    --blue-500: #42a5f5;
+    --blue-700: #008af9;
+    --blue-900: #05529e;
+    --blue-1000: #0E47A1;
+
+    --red-100: #ffdddc;
+    --red-300: #ec5350;
+    --red-500: #e53935;
+
+    --green-500: #4cd7ab;
+    --green-700: #1effb8;
+
+    --dark-10: #ececec;
+    --dark-50: #eeeeee;
+    --dark-100: #fcfcfc;
+    --dark-150: #f9f9f9;
+    --dark-200: #c9c9c9;
+    --dark-300: #939393;
+    --dark-400: #4b4b4b;
+    --dark-500: #232323;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+.text-bold {
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+.section-padding {
+    padding: 70px 0;
+}
+
+.text-gradient {
+    color: var(--blue-500);
+}
+
+.light-blue {
+    background-color: var(--blue-100);
+    overflow: hidden;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.btn-base {
+    @extend %link-defaults;
+    display: inline-block;
+    border-radius: 5px;
+    color: var(--light);
+    border: 1px solid transparent;
+    text-transform: capitalize;
+    outline: none;
+    box-shadow: none;
+
+    @extend %base-transition;
+
+    &:hover,
+    &:focus {
+        transform: translateY(-8px);
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+.btn-blue-light {
+    color: var(--light);
+    background-color: var(--blue-500);
+
+    &:hover,
+    &:focus {
+        color: var(--blue-500);
+        background-color: transparent;
+        border: 1px solid var(--blue-500);
+    }
+}
+
+.btn-green-red {
+    background-color: var(--green-500);
+
+    &:hover,
+    &:focus {
+        background-color: var(--red-500);
+        color: var(--light);
+        border: 1px solid var(--red-500);
+    }
+}
+
+.btn-red-outline {
+    color: var(--red-300);
+    border: 1px solid var(--red-300);
+
+    &:hover,
+    &:focus {
+        color: var(--light);
+        background-color: var(--red-300);
+    }
+}
+
+.btn-red-fill {
+    color: var(--light);
+    background-color: var(--red-300);
+
+    &:hover,
+    &:focus {
+        color: var(--red-300);
+        background-color: transparent;
+        border: 1px solid var(--red-300);
+    }
+}
+
+.btn-base-lg {
+    padding: 10px 50px;
+}
+
+.btn-base-md {
+    padding: 10px 40px;
+}
+
+.btn-base-small {
+    padding: 10px 30px;
+}
+
+.btn-base-xs {
+    padding: 8px 20px;
+}
+
+ 
+
+@mixin flex-grid($width, $gap) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($width, 1fr));
+    gap: $gap;
+}
+
+@mixin center-flex($type: "all") {
+    display: flex;
+
+    @if ($type =="all") {
+        justify-content: center;
+        align-items: center;
+    }
+
+    @if ($type =="ver") {
+        align-items: center;
+    }
+
+    @if ($type =="hor") {
+        justify-content: center;
+    }
+}
+
+%list-default {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+%link-defaults {
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+}
+
+%base-transition {
+    transition: 0.3s ease-in;
+}
+
+
+.deposit-100-hero {
+    background: url('../img/deposit-hero.jpg') var(--blue-1000);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.deposit-100-hero__header {
+    color: var(--light);
+}
+
+.deposit-100-hero__sub-description {
+    font-size: $font-size-136-18;
+    line-height: 136px;
+ 
+}
+
+.deposit-100-hero__title {
+    font-size:  $font-size-50-16;
+}
+
+.deposit-100-hero__description {
+    margin-bottom: 20px;
+}
+
+
+.deposit-100-how__title,
+.deposit-100-grow__title,
+.deposit-100-bonus__title,
+.deposit-100-provide__title {
+    font-size: $font-size-30-16;
+    margin-bottom: 20px;
+}
+
+
+.deposit-100-how,
+.deposit-100-bonus {
+    background-color: var(--blue-100);
+}
+
+
+.deposit-100-how__text,
+.deposit-100-provide__description,
+.deposit-100-bonus__text,
+.deposit-100-grow__description,
+.deposit-100-how__item-text {
+    color: var(--dark-400);
+}
+
+.deposit-100-how__item-text {
+    max-width: 336px;
+}
+
+.deposit-100-how__item-step {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.deposit-100-how__header {
+    margin-bottom: 50px;
+}
+
+.deposit-100-how__item-body{position: relative;}
+
+.deposit-100-how__item-body::before {
+    position: absolute;
+    bottom: -50px;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: var(--blue-700);
+}
+
+
+.deposit-100-banner {
+    background: url("../img/banner-bg.png") var(--blue-100);
+    position: relative;
+    background-position: 90%;
+    background-size: 40% 100%;
+    background-repeat: no-repeat;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.deposit-100-banner__title {
+    font-size: $font-size-30-16;
+}
+
+.deposit-100-banner__description,
+.deposit-100-banner__title {
+    margin-bottom: 20px;
+}
+
+.deposit-100-banner__description {
+    max-width: 484px;
+}
+
+.deposit-100-bonus__link {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    align-items: center;
+    gap: 10px;
+}
+.deposit-100-bonus__link:hover svg {
+    padding-left: 10px;
+}
+
+.deposit-100-bonus__link svg {
+  transition: all .3s ease-in;
+}
+
+.deposit-100-bonus__text-first,
+.deposit-100-bonus__text-second,
+.deposit-100-grow__description-second,
+.deposit-100-grow__description-first {margin-bottom: 30px;}
+
+
+@media (max-width: 991.98px) {
+
+    .deposit-100-hero {
+        background: url('../img/deposit-hero-991.png'), #0E47A1;
+        background-position: top -70px center;
+        background-repeat: no-repeat;
+    }
+ 
+    .deposit-100-bonus {
+        padding: 70px 0;
+    }
+
+    .deposit-100-grow {padding: 0 0 70px 0;}
+
+    .deposit-100-provide__header,
+    .deposit-100-grow__header,
+    .deposit-100-bonus__header {
+        margin-top: 50px;
+    }
+
+    
+    .deposit-100-hero__header {
+        margin-top: 300px;
+        display: block;
+    }
+
+    .deposit-100-hero__sub-description {
+        font-size: clamp(1.00rem, calc(-4.59rem + 23.86vw), 10.19rem);
+    }
+
+    .deposit-100-hero__title {
+        font-size: clamp(1.00rem, calc(-0.67rem + 7.14vw), 3.75rem);
+    }
+    
+}
+
+@media (max-width:767.98px) {
+    .deposit-100-how__item-step {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .deposit-100-how__item-step-first {
+        margin-bottom: 80px;
+    }
+    
+    .deposit-100-banner {
+        background-position: top center;
+        background: url('../img/banner-bg-767.png') var(--blue-100);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-size: 100% 50%;
+    }
+}
+@media (max-width:575.98px) {
+     .section-padding {padding: 50px 0;}
+
+     
+     .btn-base-small {
+        padding: 8px 20px;
+     }
+     .btn-base-lg {padding: 8px 40px;}
+
+     .btn-base-lg,
+     .btn-base-small {
+        font-size: $font-size-14;
+     }
+
+
+    .deposit-100-hero {
+        background: url('../img/deposit-hero-575.jpg'), #0E47A1;
+        background-position: top -100px center;
+        background-repeat: no-repeat;
+    }
+
+
+    .deposit-100-banner__header {margin-top: 80px;}
+    .deposit-100-hero__header {
+        margin-top: 200px;
+  
+    }
+
+    .deposit-100-hero__sub-description{
+        font-size: 50px;
+        line-height: 1.1;
+    }
+
+    .deposit-100-banner__header,
+    .deposit-100-grow__header,
+    .deposit-100-bonus__header,
+    .deposit-100-hero__header,
+    .deposit-100-provide__header {
+        text-align: center;
+    }
+
+
+    .deposit-100-how__item-text,
+    .deposit-100-banner__description,
+    .deposit-100-grow__description,
+    .deposit-100-bonus__text,
+    .deposit-100-provide__description {
+        font-size: $font-size-13;
+        line-height: 24px;
+    }
+
+    .deposit-100-bonus__link {
+        max-width: 210px;
+        margin-inline: auto;
+    }
+
+    .deposit-100-how__img-container img {
+        width: 60%;
+        margin-inline: auto;
+    }
+
+    .deposit-100-how__item-body::before {
+        bottom: -30px;
+    }
+ 
+}
