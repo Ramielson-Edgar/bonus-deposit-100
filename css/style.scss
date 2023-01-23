@@ -225,10 +225,11 @@ img {
 
 
 .deposit-100-hero {
-    background: url('../img/deposit-hero.jpg') var(--blue-1000);
+    background: url('../img/deposit-hero.png') var(--blue-1000);
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-position:  clamp(65%, 400px,  300px) 0;
+    background-size: contain;
+ 
 }
 
 .deposit-100-hero__header {
