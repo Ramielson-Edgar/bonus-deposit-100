@@ -192,17 +192,15 @@ img {
   z-index: 2;
 }
 
-.deposit-100-hero__sub-description {
-  font-size: clamp(1.13rem, -0.98rem + 12.23vw, 8.5rem);
-  line-height: 136px;
-}
-
 .deposit-100-hero__title {
-  font-size: clamp(1rem, 0.39rem + 3.52vw, 3.13rem);
+  font-size: clamp(1rem, -0.3rem + 5.55vw, 4rem);
+  margin-bottom: 30px;
 }
 
 .deposit-100-hero__description {
-  margin-bottom: 20px;
+  font-size: clamp(1rem, 0.78rem + 0.92vw, 1.5rem);
+  max-width: 260px;
+  margin-bottom: 30px;
 }
 
 .deposit-100-how__title,
@@ -333,6 +331,10 @@ img {
   .deposit-100-hero__sub-description {
     line-height: 1.1;
   }
+  .deposit-100-hero__description,
+.deposit-100-hero__title {
+    margin-bottom: 20px;
+  }
   .deposit-100-banner {
     background-position: top center;
     background: url("../img/banner-bg-767.png") var(--blue-100);
@@ -354,6 +356,12 @@ img {
   .btn-base-lg,
 .btn-base-small {
     font-size: 0.875rem;
+  }
+  .deposit-100-hero__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   .deposit-100-banner__header {
     margin-top: 80px;
@@ -390,5 +398,8 @@ img {
   }
   .deposit-100-how__item-body::before {
     bottom: -30px;
+  }
+  .deposit-100-hero__title {
+    margin-bottom: 0;
   }
 }/*# sourceMappingURL=style.css.map */

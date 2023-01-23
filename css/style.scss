@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&&display=swap");
 
  
-$font-size-136-18: clamp(1.13rem, calc(-0.98rem + 12.23vw), 8.50rem);
+$font-size-64-16: clamp(1.00rem, calc(-0.30rem + 5.55vw), 4.00rem);
 $font-size-57-16: clamp(1.88rem, calc(1.14rem + 3.12vw), 3.56rem);
 $font-size-30-16: clamp(1rem, calc(0.62rem + 1.62vw), 1.88rem);
 $font-size-50-16: clamp(1.00rem, calc(0.39rem + 3.52vw), 3.13rem);
+$font-size-24-16: clamp(1.00rem, calc(0.78rem + 0.92vw), 1.50rem);
 
 $font-size-16: 1rem;
 $font-size-16-14: clamp(0.88rem, calc(0.82rem + 0.23vw), 1rem);
@@ -256,18 +257,17 @@ img {
     z-index: 2;
 }
 
-.deposit-100-hero__sub-description {
-    font-size: $font-size-136-18;
-    line-height: 136px;
  
-}
 
 .deposit-100-hero__title {
-    font-size:  $font-size-50-16;
+    font-size: $font-size-64-16;
+    margin-bottom: 30px;
 }
 
 .deposit-100-hero__description {
-    margin-bottom: 20px;
+    font-size: $font-size-24-16;
+    max-width: 260px;
+    margin-bottom: 30px;
 }
 
 
@@ -409,6 +409,17 @@ img {
     .deposit-100-hero__sub-description {
         line-height: 1.1;
     }
+
+    .deposit-100-hero__description,
+    .deposit-100-hero__title {
+        margin-bottom: 20px;
+    }
+    
+  
+   
+       
+    
+    
     
     .deposit-100-banner {
         background-position: top center;
@@ -417,7 +428,10 @@ img {
         background-size: contain;
         background-size: 100% 50%;
     }
+
+
 }
+
 @media (max-width:575.98px) {
      .section-padding {padding: 50px 0;}
 
@@ -432,12 +446,11 @@ img {
         font-size: $font-size-14;
      }
 
-
-    // .deposit-100-hero {
-    //     background: url('../img/deposit-hero-575.jpg'), #0E47A1;
-    //     background-position: top -100px center;
-    //     background-repeat: no-repeat;
-    // }
+     .deposit-100-hero__header {
+        @include center-flex('all');
+        flex-direction: column;
+     }
+  
 
 
     .deposit-100-banner__header {margin-top: 80px;}
@@ -451,6 +464,7 @@ img {
         line-height: 1.1;
     }
 
+    
     .deposit-100-banner__header,
     .deposit-100-grow__header,
     .deposit-100-bonus__header,
@@ -482,5 +496,11 @@ img {
     .deposit-100-how__item-body::before {
         bottom: -30px;
     }
+
+ 
+    .deposit-100-hero__title {
+        margin-bottom: 0;
+    }
+    
  
 }
