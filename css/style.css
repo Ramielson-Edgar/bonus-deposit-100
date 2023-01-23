@@ -160,15 +160,36 @@ img {
   transition: 0.3s ease-in;
 }
 
+.deposit-100-hero__img-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.deposit-100-hero__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .deposit-100-hero {
-  background: url("../img/deposit-hero.png") var(--blue-1000);
-  background-repeat: no-repeat;
-  background-position: clamp(65%, 400px, 300px) 0;
-  background-size: contain;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--blue-1000);
 }
 
 .deposit-100-hero__header {
   color: var(--light);
+  position: relative;
+  z-index: 2;
 }
 
 .deposit-100-hero__sub-description {
@@ -279,11 +300,6 @@ img {
 }
 
 @media (max-width: 991.98px) {
-  .deposit-100-hero {
-    background: url("../img/deposit-hero-991.png"), #0E47A1;
-    background-position: top -70px center;
-    background-repeat: no-repeat;
-  }
   .deposit-100-bonus {
     padding: 70px 0;
   }
@@ -296,7 +312,7 @@ img {
     margin-top: 50px;
   }
   .deposit-100-hero__header {
-    margin-top: 300px;
+    margin-top: 114%;
     display: block;
   }
   .deposit-100-hero__sub-description {
@@ -335,11 +351,6 @@ img {
   .btn-base-lg,
 .btn-base-small {
     font-size: 0.875rem;
-  }
-  .deposit-100-hero {
-    background: url("../img/deposit-hero-575.jpg"), #0E47A1;
-    background-position: top -100px center;
-    background-repeat: no-repeat;
   }
   .deposit-100-banner__header {
     margin-top: 80px;
